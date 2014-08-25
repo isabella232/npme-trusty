@@ -21,6 +21,6 @@
   },
   "dependencies": {
     "chalk": "^0.5.1",
-    "underscore": "^1.6.0"
+    "lodash": "^1.6.0"
   }
 }
