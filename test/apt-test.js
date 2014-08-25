@@ -18,6 +18,25 @@ lab.experiment('Apt', function() {
 
       apt.installPackages(function() {})
     });
+
+    lab.it('executes callback once all packages are installed', function(done) {
+      var packageInstalled = false,
+        apt = new Apt({
+        packages: ['ansible'],
+        util: {
+          exec: function(command, cb) {
+            Lab.expect(command).to.eql('sudo apt-get install ansible');
+            packageInstalled = true;
+            cb();
+          }
+        }
+      });
+
+      apt.installPackages(function() {
+        Lab.expect(packageInstalled).to.eql(true);
+        done();
+      })
+    });
   });
 
 });
