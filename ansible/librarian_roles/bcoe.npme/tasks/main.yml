@@ -1,0 +1,21 @@
+---
+
+  - name: install npm@npme-beta
+    sudo: true
+    command: npm install npm@2.0.0-beta.0 -g
+
+  - name: install ndm
+    sudo: true
+    command: npm install ndm -g
+
+  - name: build redis
+    include: 'redis.yml'
+
+  - name: build nginx
+    include: 'nginx.yml'
+
+  - name: build npme
+    include: 'npme.yml'
+
+  - name: build couchdb
+    include: 'couchdb.yml'
