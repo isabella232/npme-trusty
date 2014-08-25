@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/npm/npme-trusty/issues"
   },
-  "homepage": "https://github.com/npm/npme-trusty"
+  "homepage": "https://github.com/npm/npme-trusty",
+  "devDependencies": {
+    "lab": "^4.1.0"
+  },
+  "dependencies": {
+    "chalk": "^0.5.1",
+    "underscore": "^1.6.0"
+  }
 }
