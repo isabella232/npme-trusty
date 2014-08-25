@@ -1,6 +1,6 @@
 {
   "name": "npme-trusty",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "npmE one-step-install for Ubuntu Trusty.",
   "main": "lib/index.js",
   "scripts": {
