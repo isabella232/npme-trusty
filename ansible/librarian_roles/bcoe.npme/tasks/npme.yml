@@ -1,0 +1,5 @@
+---
+
+  - name: install npme cli
+    sudo: true
+    command: npm install @npm/npme -g --registry={{npme_url}}
