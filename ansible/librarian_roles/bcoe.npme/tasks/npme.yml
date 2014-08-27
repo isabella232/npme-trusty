@@ -1,5 +1,6 @@
+# install the bins required for bootstrapping an npmE instance.
 ---
 
   - name: install npme cli
     sudo: true
-    command: npm install @npm/npme -g --registry={{npme_url}}
+    command: npm install @npm/npme-service-installer -g --registry={{npme_url}}
