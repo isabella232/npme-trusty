@@ -15,7 +15,9 @@ lab.experiment('Util', function() {
         }
       });
 
-      util.exec('echo hello', function() {});
+      util.exec('echo hello', function() {
+        done();
+      });
     });
   });
 

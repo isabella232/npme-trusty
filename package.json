@@ -1,6 +1,6 @@
 {
   "name": "npme-trusty",
-  "version": "1.0.10",
+  "version": "1.2.2",
   "description": "npmE one-step-install for Ubuntu Trusty.",
   "main": "lib/index.js",
   "scripts": {
@@ -21,7 +21,10 @@
   },
   "dependencies": {
     "async": "^0.9.0",
+    "bluebird": "^2.3.2",
     "chalk": "^0.5.1",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "mkdirp": "^0.5.0",
+    "npme-ansible": "^1.0.0"
   }
 }
