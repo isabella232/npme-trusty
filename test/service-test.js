@@ -9,7 +9,7 @@ lab.experiment('Service', function() {
       var service = new Service({
         util: {
           exec: function(command, opts, cb) {
-            Lab.expect(command).to.eql('npme-service-installer generate-config');
+            Lab.expect(command).to.match(/npme-service-installer generate-config/);
             done();
           }
         }
