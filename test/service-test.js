@@ -34,6 +34,36 @@ lab.experiment('Service', function() {
     });
   });
 
+  lab.experiment('installPackages', function() {
+    lab.it('execs appropriate command to install packages', function(done) {
+      var service = new Service({
+        util: {
+          exec: function(command, opts, cb) {
+            Lab.expect(command).to.eql('npm install --always-auth --registry=https://enterprise.npmjs.com');
+            done();
+          }
+        }
+      });
+
+      service.installPackages();
+    });
+  });
+
+  lab.experiment('runCouchApp', function() {
+    lab.it('execs appropriate command to install the npmE couch-app', function(done) {
+      var service = new Service({
+        util: {
+          exec: function(command, opts, cb) {
+            console.log(command);
+            done();
+          }
+        }
+      });
+
+      service.runCouchApp();
+    });
+  });
+
   lab.experiment('getBinaryDirectory', function() {
     lab.it('parses service.json and returns the appropriate binary directory', function(done) {
       var service = new Service({
