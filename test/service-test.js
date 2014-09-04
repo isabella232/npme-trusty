@@ -4,18 +4,18 @@ var Lab = require('lab'),
 
 lab.experiment('Service', function() {
 
-  lab.experiment('generateConfiguration', function() {
+  lab.experiment('interview', function() {
     lab.it('execs appropriate command to generate config', function(done) {
       var service = new Service({
         util: {
           exec: function(command, opts, cb) {
-            Lab.expect(command).to.match(/npme-service-installer generate-config/);
+            Lab.expect(command).to.match(/ndm interview/);
             done();
           }
         }
       });
 
-      service.generateConfiguration();
+      service.interview();
     });
   });
 
