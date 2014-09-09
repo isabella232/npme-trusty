@@ -24,7 +24,7 @@ lab.experiment('Service', function() {
       var service = new Service({
         util: {
           exec: function(command, opts, cb) {
-            Lab.expect(command).to.eql('sudo ndm generate --uid=ubuntu --gid=ubuntu');
+            Lab.expect(command).to.eql('sudo /etc/npme/node_modules/.bin/ndm generate --uid=ubuntu --gid=ubuntu');
             done();
           }
         }
@@ -39,7 +39,7 @@ lab.experiment('Service', function() {
       var service = new Service({
         util: {
           exec: function(command, opts, cb) {
-            Lab.expect(command).to.eql('npm install --always-auth --registry=https://enterprise.npmjs.com');
+            Lab.expect(command).to.eql('/etc/npme/node_modules/.bin/npm install --always-auth --registry=https://enterprise.npmjs.com');
             done();
           }
         }
