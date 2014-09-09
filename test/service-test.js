@@ -24,7 +24,7 @@ lab.experiment('Service', function() {
       var service = new Service({
         util: {
           exec: function(command, opts, cb) {
-            Lab.expect(command).to.eql('sudo /etc/npme/node_modules/.bin/ndm generate --uid=ubuntu --gid=ubuntu');
+            Lab.expect(command).to.eql('sudo /etc/npme/node_modules/.bin/ndm generate --uid=npme --gid=npme');
             done();
           }
         }
