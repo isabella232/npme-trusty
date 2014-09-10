@@ -24,7 +24,7 @@ lab.experiment('Service', function() {
       var service = new Service({
         util: {
           exec: function(command, opts, cb) {
-            Lab.expect(command).to.eql('sudo ndm generate --uid=ubuntu --gid=ubuntu');
+            Lab.expect(command).to.eql('sudo /etc/npme/node_modules/.bin/ndm generate --uid=npme --gid=npme');
             done();
           }
         }
@@ -39,7 +39,7 @@ lab.experiment('Service', function() {
       var service = new Service({
         util: {
           exec: function(command, opts, cb) {
-            Lab.expect(command).to.eql('npm install --always-auth --registry=https://enterprise.npmjs.com');
+            Lab.expect(command).to.eql('sudo /etc/npme/node_modules/.bin/npm install --userconfig=/etc/npme/.npmrc --always-auth --registry=https://enterprise.npmjs.com');
             done();
           }
         }
@@ -54,7 +54,6 @@ lab.experiment('Service', function() {
       var service = new Service({
         util: {
           exec: function(command, opts, cb) {
-            console.log(command);
             done();
           }
         }
@@ -63,6 +62,22 @@ lab.experiment('Service', function() {
       service.runCouchApp();
     });
   });
+
+  lab.experiment('chownPackages', function() {
+    lab.it('execs appropriate command to chown packages', function(done) {
+      var service = new Service({
+        util: {
+          exec: function(command, opts, cb) {
+            Lab.expect(command).to.eql('sudo chown -R npme:npme /etc/npme/node_modules')
+            done();
+          }
+        }
+      });
+
+      service.chownPackages();
+    });
+  });
+
 
   lab.experiment('getBinaryDirectory', function() {
     lab.it('parses service.json and returns the appropriate binary directory', function(done) {
