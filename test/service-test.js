@@ -39,7 +39,7 @@ lab.experiment('Service', function() {
       var service = new Service({
         util: {
           exec: function(command, opts, cb) {
-            Lab.expect(command).to.eql('sudo su npme -c "/etc/npme/node_modules/.bin/npm install --userconfig=/etc/npme/.npmrc --always-auth --registry=https://enterprise.npmjs.com"');
+            Lab.expect(command).to.eql('sudo /etc/npme/node_modules/.bin/npm install --userconfig=/etc/npme/.npmrc --always-auth --registry=https://enterprise.npmjs.com');
             done();
           }
         }
