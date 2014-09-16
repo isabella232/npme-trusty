@@ -10,7 +10,7 @@ lab.experiment('Apt', function() {
         packages: ['ansible'],
         util: {
           exec: function(command) {
-            Lab.expect(command).to.eql('sudo apt-get install ansible');
+            Lab.expect(command).to.eql('sudo apt-get install -y ansible');
             done();
           }
         }
@@ -25,7 +25,7 @@ lab.experiment('Apt', function() {
         packages: ['ansible'],
         util: {
           exec: function(command, cb) {
-            Lab.expect(command).to.eql('sudo apt-get install ansible');
+            Lab.expect(command).to.eql('sudo apt-get install -y ansible');
             packageInstalled = true;
             cb();
           }
